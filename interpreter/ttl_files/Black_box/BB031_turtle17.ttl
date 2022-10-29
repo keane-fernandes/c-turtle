@@ -1,0 +1,80 @@
+{
+ SET A := 10 ;
+ SET B := 10 ; 
+ SET C := 10 ;
+ SET D := 10 ;
+ SET E := 10 ;
+ SET F := 10 ;
+ SET G := 10 ;
+ SET H := 10 ;
+ SET I := 10 ;
+ SET J := 10 ;
+ SET K := 10 ;
+ SET L := 10 ;
+ SET M := 10 ;
+ SET N := 10 ;
+ SET O := 10 ;
+ SET P := 10 ;
+ SET Q := 10 ;
+ SET R := 10 ;
+ SET S := 10 ;
+ SET T := 10 ;
+ SET U := 10 ;
+ SET V := 10 ;
+ SET W := 10 ;
+ SET X := 10 ;
+ SET Y := 10 ;
+ SET Z := 10 ;
+ FD A
+ RT 10
+ FD B
+ RT 10
+ FD C
+ RT 10
+ FD D
+ RT 10
+ FD E
+ RT 10
+ FD F
+ RT 10
+ FD G
+ RT 10
+ FD H
+ RT 10
+ FD I
+ RT 10
+ FD J
+ RT 10
+ FD K
+ RT 10
+ FD L
+ RT 10
+ FD M
+ RT 10
+ FD N
+ RT 10
+ FD O
+ RT 10
+ FD P
+ RT 10
+ FD Q
+ RT 10
+ FD R
+ RT 10
+ FD S
+ RT 10
+ FD T
+ RT 10
+ FD U
+ RT 10
+ FD V
+ RT 10
+ FD W
+ RT 10
+ FD X
+ RT 10
+ FD Y
+ RT 10
+ FD Z
+}
+

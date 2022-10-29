@@ -1,0 +1,29 @@
+{
+   SET R := 0 ;
+   SET G := 255 ;
+   SET B := 0 ;
+
+    DO A FROM 1 TO 300 {
+         MVR r0 R
+         NOT r0
+         STR r0 R
+
+         MVR r0 G
+         NOT r0
+         STR r0 G
+
+         DO X FROM 1 TO 4 {
+            MVR r0 B
+            NOT r0
+            STR r0 B
+
+            PENCOL_R := R
+            PENCOL_G := G
+            PENCOL_B := B
+
+            FD A
+            RT 90
+        }
+         RT 10
+    }
+}

@@ -1,0 +1,56 @@
+{
+ DO A FROM 1 TO 1 {
+  DO B FROM 1 TO 1 {
+   DO C FROM 1 TO 1 {
+    DO D FROM 1 TO 1 {
+     DO E FROM 1 TO 1 {
+      DO F FROM 1 TO 1 {
+       DO G FROM 1 TO 1 {
+        DO H FROM 1 TO 1 {
+         DO I FROM 1 TO 1 {
+          DO J FROM 1 TO 1 {
+           DO K FROM 1 TO 1 {
+            DO L FROM 1 TO 1 {
+             DO M FROM 1 TO 1 {
+              DO N FROM 1 TO 1 {
+               DO O FROM 1 TO 1 {
+                DO P FROM 1 TO 1 {
+                 DO Q FROM 1 TO 1 {
+                  DO R FROM 1 TO 1 {
+                   DO S FROM 1 TO 1 {
+                    DO T FROM 1 TO 1 {
+                     DO U FROM 1 TO 1 {
+                      DO V FROM 1 TO 1 {
+                       DO W FROM 1 TO 1 {
+                        DO X FROM 1 TO 1 {
+                         DO Y FROM 1 TO 1 {
+                          DO Z FROM 1 TO 1 { 
+                            FD 20
+                            LT 30
+                          }
+                         }
+                        }
+                       }
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+           }
+          } 
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

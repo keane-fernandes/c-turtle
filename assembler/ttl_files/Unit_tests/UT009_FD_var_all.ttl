@@ -1,0 +1,28 @@
+{
+    FD A
+    FD B
+    FD C
+    FD D
+    FD E
+    FD F
+    FD G
+    FD H
+    FD I
+    FD J
+    FD K
+    FD L
+    FD M
+    FD N
+    FD O
+    FD P
+    FD Q
+    FD R
+    FD S
+    FD T
+    FD U
+    FD V
+    FD W
+    FD X
+    FD Y
+    FD Z
+}

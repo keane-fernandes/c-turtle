@@ -1,0 +1,21 @@
+{
+   SET T := 90.911 ;
+
+   DO X FROM 1 TO 255 {
+    
+        SET R := X 4 * 256 | ;
+        SET G := X 256 * 256 | ;
+        SET B := X 256 * 256 | ;
+
+        PENCOL_R := R
+        PENCOL_G := G
+        PENCOL_B := B
+       
+        SET C := 50 X + ;
+        
+        FD C
+        RT T
+   }
+}
+
+

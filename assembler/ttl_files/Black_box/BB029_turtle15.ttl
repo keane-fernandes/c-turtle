@@ -1,0 +1,15 @@
+{
+ DO A FROM 1 TO 5 {
+   FD 30
+   RT 30
+ }
+ DO A FROM 1 TO 5 {
+   FD 50
+   RT 50
+ }
+ SET A := 3 20 * ;
+ DO B FROM 1 TO A {
+   FD A
+   RT 50
+ }
+}

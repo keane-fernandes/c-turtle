@@ -1,0 +1,6 @@
+{
+  DO A FROM 0 TO 0 {
+    FD 50
+    RT 10
+  }
+}

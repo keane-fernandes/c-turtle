@@ -1,0 +1,32 @@
+{
+    PENCOL_G := 0
+    PENCOL_B := 0
+    
+    DO I FROM 75 TO 255 {    
+
+        SET N := 0 ;
+
+        PENCOL_R := I
+        FD 100
+        PENCOL_R := N
+        
+        RT 30
+        
+        PENCOL_G := I
+        FD 50
+        PENCOL_G := N
+
+        LT 60
+        
+        PENCOL_B := I
+        FD 50
+        PENCOL_B := N
+        FD 100
+
+        RT 30
+
+        MOVETO 0 0
+
+        RT 2
+    }
+}

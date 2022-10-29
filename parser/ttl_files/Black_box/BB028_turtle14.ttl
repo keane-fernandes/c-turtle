@@ -1,0 +1,7 @@
+{
+  SET A := 1 ;
+  DO B FROM A TO 10 {
+   FD 10
+   RT 45
+  }
+}

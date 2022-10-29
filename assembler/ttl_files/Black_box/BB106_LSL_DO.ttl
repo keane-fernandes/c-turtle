@@ -1,0 +1,23 @@
+{
+    SET R := 0 ;
+    SET G := 0 ;
+    SET B := 0 ;
+        
+    MVR r0 1
+    
+    DO A FROM 1 TO 7 {
+        MVR r1 1
+        MVR r2 A
+        LSL r1 r2
+        ORR r0 r0 r1
+    }
+    
+    STR r0 B
+    
+    PENCOL_R := R
+    PENCOL_G := G
+    PENCOL_B := B
+
+    LT 90
+    FD 100
+}
