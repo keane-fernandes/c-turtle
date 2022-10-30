@@ -1,8 +1,0 @@
-{
-  DO A FROM 1 TO 4 {
-   DO B FROM 10 TO 12 {
-     RT 90 
-     FD B
-   }
-  }
-}

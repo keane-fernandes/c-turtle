@@ -1,9 +1,0 @@
-{
-    SET A := 1 ;
-
-    DO B FROM 1 TO 50 {
-        SET A := A 5 + ;
-        FD A
-        RT 32
-    }
-}

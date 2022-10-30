@@ -1,9 +1,0 @@
-{
-   SET T := -90.911 ;
-
-   DO X FROM 1 TO 500 {
-       SET C := 50 X + ;
-       FD C
-       RT T
-   }
-}

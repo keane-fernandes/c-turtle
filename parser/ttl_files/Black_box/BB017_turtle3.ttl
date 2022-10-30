@@ -1,9 +1,0 @@
-{
-  DO A FROM 1 TO 5 {
-    DO B FROM A TO 5 {
-      SET C := A B 10 * + ;
-      LT 30 
-      FD C
-    }
-  }
-}

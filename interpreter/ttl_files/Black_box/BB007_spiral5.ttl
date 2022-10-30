@@ -1,8 +1,0 @@
-{
-    SET A := 59 ;
-
-    DO I FROM 1 TO 360 {
-        FD I
-        LT A
-    }
-}
