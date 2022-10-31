@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">A C implementation of the LOGO programming language with an Assembly extension.</h4>
+<h4 align="center">A C implementation of the LOGO programming language with an ARM Assembly extension.</h4>
 
 <p align="center">
   <a href="#Features">Features</a> |
@@ -31,6 +31,9 @@ Moreover, most modern programming languages have pretty much abstracted away the
 I have included some examples in this [folder](../assembler/samples) so kindly do check it out!
 
 # Design
+The software package is essentially a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) with an interpreter module.
+
+The parser ensures that the code conforms to the [formal grammar](##Formal-BNF-Grammar).
 
 # Usage
 ## Setup 
