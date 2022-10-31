@@ -33,7 +33,7 @@ I have included some examples in this [folder](../assembler/samples) so kindly d
 # Design
 The software package is essentially a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) with an interpreter module.
 
-The parser ensures that the code conforms to the [formal grammar](##Formal-BNF-Grammar).
+The parser ensures that the code conforms to the [formal grammar](#formal-bnf-grammar).
 
 # Usage
 ## Setup 
