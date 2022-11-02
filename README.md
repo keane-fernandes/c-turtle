@@ -35,7 +35,7 @@ I have included some examples in this [folder](../assembler/samples) so kindly d
 The software package is essentially a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) with an interpreter module. The parser ensures that the code conforms to the [formal grammar](#formal-bnf-grammar) and the interpreter then executes each individual instruction.
 
 # Testing
-## Parser Testing
+## Parser
 For the parser, a combination of blackbox and whitebox testing (unit tests and assertions) was used with the strategy summarised as follows:
 
 - **White box testing**: 
@@ -53,7 +53,7 @@ cd parser
 make run_test_parse
 ```
 
-## Interpreter Testing
+## Interpreter
 For the interpreter, there was a greater reliance on assert testing to make sure that the tokens being parsed translated into the expected interpretation. This meant that functions within the interpreter module were made to return booleans which facilitatated the use of assert testing for interpreter validation. The testing methodology is summarised as follows:
 
 - **White box testing**: 
@@ -68,7 +68,7 @@ To execute the test harness, type the following two commands on your terminal:
   make run_test_interpreter
   ```
 
-## Assembler Testing
+## Assembler
 For the assembler (basically an extended interpreter module) module, a similar test methodology was used as in the case of the interpreter - mainly assertions and black box testing *.ttl files in [this folder](assembler/ttl_files/Black_box/).  
 
 - **White box testing**: 
