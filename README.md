@@ -32,7 +32,7 @@ Moreover, most modern programming languages have pretty much abstracted away the
 I have included some examples in this [folder](../assembler/samples) so kindly do check it out!
 
 # Design
-The software package is essentially a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) with an interpreter module. The parser ensures that the code conforms to the [formal grammar](#formal-bnf-grammar) and the interpeter then executes each individual instruction.
+The software package is essentially a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) with an interpreter module. The parser ensures that the code conforms to the [formal grammar](#formal-bnf-grammar) and the interpreter then executes each individual instruction.
 
 # Testing
 ## Parser Testing
@@ -47,10 +47,11 @@ For the parser, a combination of blackbox and whitebox testing (unit tests and a
 
 
 To execute the test harness, type the following two commands on your terminal: 
-  ```bash
-  cd parser
-  make run_test_parse
-  ```
+
+```bash
+cd parser
+make run_test_parse
+```
 
 ## Interpreter Testing
 For the interpreter, there was a greater reliance on assert testing to make sure that the tokens being parsed translated into the expected interpretation. This meant that functions within the interpreter module were made to return booleans which facilitatated the use of assert testing for interpreter validation. The testing methodology is summarised as follows:
@@ -59,51 +60,67 @@ For the interpreter, there was a greater reliance on assert testing to make sure
   - Assertions were performed on functions in the interpreter module to ensure they were functioning as expected.
 - **Black box testing:**
   - The interpreter was batch run on the *.ttl files in [this folder](./interpreter/ttl_files/Black_box/) using a [version of the interpreter without SDL output](./interpreter/interpreter_no_SDL.c).
-- The above white box and black box testing were automated using a [test harness](./interpreter/test_interpreter.c) and a summary of the results (with test failures highlighted) is presented on the terminal window after execution.
+- The above white box and black box testing were automated using this [test harness](./interpreter/test_interpreter.c) and a summary of the results (with test failures highlighted) is presented on the terminal window after execution.
 
-- Test automation via a test harness separate version of the interpreter so that it had no output in SDL. I then used the same test harness I wrote for the parser to automate the execution of various .ttl files in Interpreter/ttl_files/Black_box.
-- I saved screenshots of the output of some of the .ttl files in Interpreter/samples for your reference.
-- The test harness is called test_interpreter.c and can be compiled and run by changing the current directory to the 'Interpreter' folder and typing the following at the command line:
-
-
-
+To execute the test harness, type the following two commands on your terminal: 
+  ```bash
+  cd interpreter
+  make run_test_interpreter
+  ```
 
 ## Assembler Testing
+For the assembler (basically an extended interpreter module) module, a similar test methodology was used as in the case of the interpreter - mainly assertions and black box testing *.ttl files in [this folder](assembler/ttl_files/Black_box/).  
 
-For my extension, I adopted the same test methodology as the interpreter. I mainly
-assert tested and did black box testing on some .ttl files I wrote. The asserts are
-in Extension/test_extension.c . 
+- **White box testing**: 
+  - Assertions were performed on additional functions in the assembler module to ensure they were functioning as expected.
+- **Black box testing:**
+  - The assembler module was batch run on the *.ttl files in [this folder](./assembler/ttl_files/Black_box/) using a [version of the interpreter without SDL output](./assembler/extension_no_SDL.c).
+- The above white box and black box testing were automated using this [test harness](./assembler/test_extension.c) and a summary of the results (with test failures highlighted) is presented on the terminal window after execution.
 
-I retained all of the previous assertions and tested my extension on all of the
-previously written .ttl files for the interpreter. 
-
-The test harness is called test_extension.c and can be compiled and run by changing
-the current directory to the 'Extension' folder and typing the following at the
-command line:
-
-I saved screenshots of the output of some of the .ttl files in Extension/samples
-for your reference.
+To execute the test harness, type the following two commands on your terminal: 
+  ```bash
+  cd assembler
+  make run_test_extension
+  ```
 
 # Usage
 ## Setup 
 Ensure you have [GCC](https://gcc.gnu.org) installed on your machine. Once you have done so, run the following command on your terminal to compile and run an example of the basic version:
 
 ```bash
-make turtle
+cd assembler
+make extension
 ```
 
-## Navigating the repository
-The [ttl_files folder](./ttl_files) contains all of the .ttl files used for testing
+Once compilation is complete, create a .ttl file that conforms to the formal BNF grammar and save it in the current directory. You can then run this file by typing this in your terminal window:
 
-samples - contains sample .ttl files with screenshots of the output
+```turtle
+./extension your_file.ttl
+```
 
-make extension - will produce the required executable for the extension
+## Variables
+Variables are set using [reverse polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
-make run_test_extension - will compile and run the test harness test_extension.c on the files in ttl_files/Black_box
-
-
+## Loops
+Loops are performed by:
+```
+DO A FROM 1 to 7 {
+  INSTRUCTIONS
+}
+```
 ## Basic Instructions
 
+| Instruction           | Description                                                                       |
+| --------------------- | --------------------------------------------------------------------------------- |
+| `FD varnum`      | Moves turtle forward varnum pixels |
+| `RT varnum`       | Rotates the turtle right by varnum degrees                                      |
+| `LT varnum`         | Rotates the turtle left by varnum degrees                                   |
+| `MOVETO x y` | Moves the turtle to coordinates specified by x and y                           |
+| `DO` | Bitwise OR of r_op1 and r_op2 and result stored in r_d                            |
+| `XOR r_d r_op1 r_op2` | Bitwise XOR of r_op1 and r_op2 and result stored in r_d                           |
+| `NOT r_d`             | Bitwise NOT of r_d                                                                |
+| `LSL r_d r_op1`       | Logical Shift Left of r_d by r_op1                                                |
+| `LSR r_d r_op1`       | Logical Shift Right of r_d by r_op1                                               |
 
 
 ## Assembly Instructions
@@ -148,13 +165,110 @@ For example, if the B component of the RGB triplet was 0 and if the user would l
     PENCOL_B := B
 ```
 
-And this would set the line colour to blue.
+The piece of code above would set the line colour to blue and helps visualise bitwise operations, elementary assembly, and looping. 
 
-Essentially, setting each bit going from right to left and can visualise this as we draw using this new pen colour on the screen. Using this example, a user can visualise bitwise operations, elementary assembly, and looping. 
+## Examples
+### Rose
+<p align="center">
+    <img width="500" src="assembler/samples/BB107_rose.jpeg" alt="Rose">
+</p>
 
-This is indeed a more tedious way of doing things, but I believe the learning potential for the user is a lot higher.
+```
+{
+   SET R := 255 ;
+   SET G := 255 ;
+   SET B := 255 ;
+   
+   MVR r0 R
+   XOR r0 r0 r0
+   STR r0 R
 
-This is just one of the infinite examples possible using this extension.
+   MVR r0 G
+   MVR r1 0
+   AND r0 r0 r1
+   STR r0 G
+   
+   PENCOL_R := R
+   PENCOL_G := G
+
+   SET A := 200 ;
+   SET B := 60 ;
+   SET C := 12 ;
+   
+   DO D FROM 1 TO 30 {
+      DO E FROM 1 TO 6 {
+         FD A
+         RT B
+      }
+   RT C
+   }
+}
+```
+
+### Faded Concentric Rings
+<p align="center">
+    <img width="500" src="assembler/samples/BB108_shadow.jpeg" alt="Rose">
+</p>
+
+```
+{
+    PENCOL_G := 0
+    PENCOL_B := 0
+    
+    DO I FROM 75 TO 255 {    
+
+        SET N := 0 ;
+
+        PENCOL_R := I
+        FD 100
+        PENCOL_R := N
+        
+        RT 30
+        
+        PENCOL_G := I
+        FD 50
+        PENCOL_G := N
+
+        LT 60
+        
+        PENCOL_B := I
+        FD 50
+        PENCOL_B := N
+        FD 100
+
+        RT 30
+
+        MOVETO 0 0
+
+        RT 2
+    }
+}
+```
+### Multicoloured Spiral
+<p align="center">
+    <img width="500" src="assembler/samples/BB104_spiral.jpeg" alt="Rose">
+</p>
+
+```
+{
+   SET T := 90.911 ;
+
+   DO X FROM 1 TO 500 {
+    
+        SET R := X 1 * 256 | ;
+        SET G := X 127 * 256 | ;
+        SET B := X 255 * 256 | ;
+
+        PENCOL_R := R
+        PENCOL_G := G
+        PENCOL_B := B
+
+        SET C := 50 X + ;
+        FD C
+        RT T
+   }
+}
+```
 
 ## Formal BNF Grammar
 
@@ -204,8 +318,6 @@ This is just one of the infinite examples possible using this extension.
 <LSR> ::= "LSR" <REG> <REG> <REG>
 <REG> ::= "r0" | "r1" | "r2" | "r3" | "r4"
 ```
-
-
 
 # License
 

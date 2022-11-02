@@ -1,0 +1,15 @@
+{
+    SET N := 5 ;
+    SET L := 400 ;
+    
+    SET A := 720.0 N / ;
+    
+    DO X FROM 1 TO 36 {
+        DO I FROM 1 TO N {
+            FD L
+            RT A
+        }
+        RT 10
+    }
+    
+}
