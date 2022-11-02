@@ -12,6 +12,7 @@
   <a href="#Features">Features</a> |
   <a href="#Overview">Overview</a> |
   <a href="#Design">Design</a>     |
+  <a href="#Testing">Testing</a>   |
   <a href="#Usage">Usage</a>       |
   <a href="#License">License</a>   |
 </p>
@@ -31,9 +32,57 @@ Moreover, most modern programming languages have pretty much abstracted away the
 I have included some examples in this [folder](../assembler/samples) so kindly do check it out!
 
 # Design
-The software package is essentially a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) with an interpreter module.
+The software package is essentially a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser) with an interpreter module. The parser ensures that the code conforms to the [formal grammar](#formal-bnf-grammar) and the interpeter then executes each individual instruction.
 
-The parser ensures that the code conforms to the [formal grammar](#formal-bnf-grammar).
+# Testing
+## Parser Testing
+For the parser, a combination of blackbox and whitebox testing (unit tests and assertions) was used with the strategy summarised as follows:
+
+- **White box testing**: 
+  - Unit tests to validate individual parts of the formal grammar. Unit tests are named using the format `UTXXX_instruction_description_of_test` where `XXX` represents the test number. These files can be found [here](./parser/ttl_files/Unit_tests). 
+  - Assertions were performed on functions in the parser module to ensure they were functioning as expected.
+- **Black box testing:**
+  - The parser was batch run on the *.ttl files in [this folder](./parser/ttl_files/Black_box/).
+- The above white box and black box testing were automated using a [test harness](./parser/test_parser.c) and a summary of the results (with test failures highlighted) is presented on the terminal window after execution.
+
+
+To execute the test harness, type the following two commands on your terminal: 
+  ```bash
+  cd parser
+  make run_test_parse
+  ```
+
+## Interpreter Testing
+For the interpreter, there was a greater reliance on assert testing to make sure that the tokens being parsed translated into the expected interpretation. This meant that functions within the interpreter module were made to return booleans which facilitatated the use of assert testing for interpreter validation. The testing methodology is summarised as follows:
+
+- **White box testing**: 
+  - Assertions were performed on functions in the interpreter module to ensure they were functioning as expected.
+- **Black box testing:**
+  - The interpreter was batch run on the *.ttl files in [this folder](./interpreter/ttl_files/Black_box/) using a [version of the interpreter without SDL output](./interpreter/interpreter_no_SDL.c).
+- The above white box and black box testing were automated using a [test harness](./interpreter/test_interpreter.c) and a summary of the results (with test failures highlighted) is presented on the terminal window after execution.
+
+- Test automation via a test harness separate version of the interpreter so that it had no output in SDL. I then used the same test harness I wrote for the parser to automate the execution of various .ttl files in Interpreter/ttl_files/Black_box.
+- I saved screenshots of the output of some of the .ttl files in Interpreter/samples for your reference.
+- The test harness is called test_interpreter.c and can be compiled and run by changing the current directory to the 'Interpreter' folder and typing the following at the command line:
+
+
+
+
+## Assembler Testing
+
+For my extension, I adopted the same test methodology as the interpreter. I mainly
+assert tested and did black box testing on some .ttl files I wrote. The asserts are
+in Extension/test_extension.c . 
+
+I retained all of the previous assertions and tested my extension on all of the
+previously written .ttl files for the interpreter. 
+
+The test harness is called test_extension.c and can be compiled and run by changing
+the current directory to the 'Extension' folder and typing the following at the
+command line:
+
+I saved screenshots of the output of some of the .ttl files in Extension/samples
+for your reference.
 
 # Usage
 ## Setup 
@@ -155,6 +204,8 @@ This is just one of the infinite examples possible using this extension.
 <LSR> ::= "LSR" <REG> <REG> <REG>
 <REG> ::= "r0" | "r1" | "r2" | "r3" | "r4"
 ```
+
+
 
 # License
 
