@@ -14,7 +14,7 @@
   <a href="#Design">Design</a>     |
   <a href="#Testing">Testing</a>   |
   <a href="#Usage">Usage</a>       |
-  <a href="#License">License</a>   |
+  <a href="#License">License</a>   
 </p>
 
 # Features
