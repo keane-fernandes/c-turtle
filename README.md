@@ -27,7 +27,7 @@ Many attempts have been made to create programming languages which are intuitive
 
 I noticed the lack of fun and interactive ways to learn ARM assembly and thought I'd do something about it. Moreover, rather than developing something completely novel, it made more sense to repurpose and extend the base LOGO language to incorporate basic assembly instructions and take advantage of its existing features. I believe this is an important aspect in software engineering, where it is important to add value by taking advantage of current technologies and repurposing them.
 
-Moreover, most modern programming languages have pretty much abstracted away the intricacies of code, with modern day developers having almost little, to no clue as to what is happening at the assembly level. This program should hopefully act as some sort of taster to assembly.
+Moreover, most modern programming languages have pretty much abstracted away the intricacies of code, with modern day developers having almost no clue as to what is happening at the assembly level. This program should hopefully act as some sort of taster to assembly.
 
 I have included some examples in this [folder](../assembler/samples) so kindly do check it out!
 
@@ -54,7 +54,7 @@ make run_test_parse
 ```
 
 ## Interpreter
-For the interpreter, there was a greater reliance on assert testing to make sure that the tokens being parsed translated into the expected interpretation. This meant that functions within the interpreter module were made to return booleans which facilitatated the use of assert testing for interpreter validation. The testing methodology is summarised as follows:
+For the interpreter, there was a greater reliance on assert testing to make sure that the tokens being parsed translated into the expected interpretation. This meant that functions within the interpreter module were made to return booleans which facilitated the use of assert testing for interpreter validation. The testing methodology is summarised as follows:
 
 - **White box testing**: 
   - Assertions were performed on functions in the interpreter module to ensure they were functioning as expected.
@@ -138,7 +138,7 @@ Turtle Assembler provides users with 5 general purpose, 8-bit registers (r0 - r4
 | `LSL r_d r_op1`       | Logical Shift Left of r_d by r_op1                                                |
 | `LSR r_d r_op1`       | Logical Shift Right of r_d by r_op1                                               |
 
-Additionally, the user has the option of modifying the colour of the pen by teweaking the red, green and blue components.
+Additionally, the user has the option of modifying the colour of the pen by tweaking the red, green and blue components.
 
 | Instruction       | Description                                     |
 | ----------------- | ----------------------------------------------- |
