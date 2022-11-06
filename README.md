@@ -85,7 +85,7 @@ To execute the test harness, type the following two commands on your terminal:
 
 # Usage
 ## Setup 
-Ensure you have [GCC](https://gcc.gnu.org) installed on your machine. Once you have done so, run the following command on your terminal to compile and run an example of the basic version:
+Ensure you have [GCC](https://gcc.gnu.org) installed on your machine. If you would like to view the printed output, please install [SDL](https://wiki.libsdl.org/Installation). Once you have done so, run the following command on your terminal to compile and run an example of the basic version:
 
 ```bash
 cd assembler
@@ -95,7 +95,7 @@ make extension
 Once compilation is complete, create a .ttl file that conforms to the formal BNF grammar and save it in the current directory. You can then run this file by typing this in your terminal window:
 
 ```turtle
-./extension your_file.ttl
+./extension your_file_path
 ```
 
 ## Variables
